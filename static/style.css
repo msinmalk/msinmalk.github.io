@@ -5,7 +5,11 @@ body {
     color: #fff;
   }
   
-
+#inspiration .byline {
+  font-size: 13px;
+  color: #aaa;
+  float: right;
+  }
 
   #menu {
     float: middle;
@@ -18,7 +22,7 @@ body {
     color: #fff;
   }
   
-  #menu.title {
+  #menu .title {
   }
   
 
