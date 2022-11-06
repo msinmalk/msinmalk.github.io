@@ -5,19 +5,24 @@ body {
     color: #fff;
   }
   
+
+
   #menu {
-    float: left;
+    float: middle;
     margin-top: 30px;
     margin-right: 20px;
+    margin-left:20px;
     text-align: right;
-    width: 150px;
+    width: 10%;
     font-family: "Myriad Pro", "Helvetica Neue", Helvetica;
     color: #fff;
   }
   
-  #menu .title {
+  #menu.title {
   }
   
+
+
   #menu ul {
     list-style-type: none;
     margin: 0;
@@ -46,7 +51,7 @@ body {
   #content {
     margin-top: 15px;
     float: left;
-    width: 500px;
+    width: 100%;
   }
   
   #content h1, #content h2, #content h3 {
@@ -61,6 +66,7 @@ body {
   #content .byline, #content .byline a, #content .note {
     font-size: 10px;
     color: #aaa;
+    float: right;
   }
   
   #content p, #content ul {
@@ -107,5 +113,16 @@ body {
     top: 0.4em; 
   }
   
+/* picture page styling*/
+
+  #picture ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
   
-  
+  #picture .title{
+    font-family: "georgia";
+    font-size: 12px;
+    color: #fff;
+  }
