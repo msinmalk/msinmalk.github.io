@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Linked Images</title>
+    <style>
+        .image-link {
+            display: inline-block;
+            margin: 10px;
+            text-align: center;
+        }
+        .image-link img {
+            max-width: 200px;
+            border: 2px solid #ccc;
+            border-radius: 5px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .image-link img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+</head>
+<body>
+    <h1>Linked Images</h1>
+    <div class="linked-images">
+        <!-- Group 1 Link -->
+        <div class="image-link">
+            <a href="group1.html">
+                <img src="group1-thumbnail.jpg" alt="Group 1">
+                <p>Group 1</p>
+            </a>
+        </div>
+
+        <!-- Group 2 Link -->
+        <div class="image-link">
+            <a href="group2.html">
+                <img src="group2-thumbnail.jpg" alt="Group 2">
+                <p>Group 2</p>
+            </a>
+        </div>
+    </div>
+</body>
+</html>

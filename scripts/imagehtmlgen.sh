@@ -5,10 +5,10 @@
 
 
 # set the directory to be searched
-dir=${1:-../static/images}
+dir=${1:-../static/images/otherimages}
 
 # set the output file
-outfile=${2:-../static/images.html}
+outfile=${2:-../static/otherimages.html}
 
 # loop through the files in the directory
 for file in $(ls $dir); do
