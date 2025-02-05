@@ -1,33 +1,21 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="utf-8">
-  <title>About · Mohsin Malik</title>
   <link rel="stylesheet" href="./static/style.css">
+  <meta charset="utf-8">
+  <title>Home · Mohsin Malik</title>
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      fetch('./header.html')
+        .then(response => response.text())
+        .then(data => {
+          document.getElementById('header-container').innerHTML = data;
+        });
+    });
+  </script>
 </head>
-
-<!-- profile image -->
-<div id="profileimg">
-    <img src="./static/images/darkportrait.jpg" alt="portrait" style="max-width: 10%;">
-  </div>
-
   
 <body>
-  <!-- Navigation Menu -->
-  <div id="menu">
-    <span class="title">Mohsin Malik</span>
-    <ul>
-      <li><a href="/about" class="active">About</a></li>
-      <li><a href="/advice">Advice</a></li>
-      <li><a href="/writings">Writings</a></li>
-      <li><a href="/books">Bookshelf</a></li>
-      <li><a href="/pictures">Culture</a></li>
-      <li><a href="/work">Work</a></li>
-    </ul>
-  </div>
-
-  <div id="left">&nbsp;</div>
-
   <!-- Main Content -->
   <div id="content">
     <h1>About Me</h1>
