@@ -14,14 +14,36 @@
     });
   </script>
 
+</head>
+  
+<body>
+
+
   <div id="header-container"></div>
   <div id="content">
     <!-- Page-specific content goes here -->
-  </div>
-</head>
-
-
-<body>
+  </div><!DOCTYPE html>
+  <html>
+  <head>
+    <link rel="stylesheet" href="./static/style.css">
+    <meta charset="utf-8">
+    <title>Home · Mohsin Malik</title>
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+        fetch('./header.html')
+          .then(response => response.text())
+          .then(data => {
+            document.getElementById('header-container').innerHTML = data;
+          });
+      });
+    </script>
+  
+  </head>
+    
+  <body>
+  
+  
+    <div id="header-container"></div>
 
 
   <!-- Main Content -->
