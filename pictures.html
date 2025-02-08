@@ -1,17 +1,25 @@
+<!DOCTYPE html>
 <html>
 <head>
   <link rel="stylesheet" href="./static/style.css">
   <meta charset="utf-8">
   <title>Home · Mohsin Malik</title>
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      fetch('./header.html')
+        .then(response => response.text())
+        .then(data => {
+          document.getElementById('header-container').innerHTML = data;
+        });
+    });
+  </script>
+
 </head>
-
-<!-- profile image -->
-<div id="profileimg">
-  <img src="./static/images/darkportrait.jpg" alt="portrait" style="max-width: 10%;">
-</div>
-
-<!-- page contents -->
+  
 <body>
+
+
+  <div id="header-container"></div>
 
 <!-- home page image -->
 <div id="picture">

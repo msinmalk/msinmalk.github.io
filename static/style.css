@@ -5,12 +5,6 @@ body {
     color: #fff;
   }
   
-#inspiration .byline {
-  font-size: 10px;
-  color: #aaa;
-  float: right;
-  }
-
   #menu {
     float: middle;
     margin-top: 30px;
@@ -21,24 +15,24 @@ body {
     font-family: "Myriad Pro", "Helvetica Neue", Helvetica;
     color: #fff;
   }
-  
-  #menu .title {
-  }
 
   #menu ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
   }
-  
-  #menu li {
-  }
-  
+
   #menu li a {
     display: inline-block;
     color: #0864c7;
   }
   
+  #inspiration .byline {
+    font-size: 10px;
+    color: #aaa;
+    float: right;
+  }
+
   #left {
     height: 1px;
     float: left;
@@ -54,6 +48,8 @@ body {
     margin-top: 15px;
     float: left;
     width: 100%;
+    color: #ffffff;
+    font-style: italic
   }
   
   #content h1, #content h2, #content h3 {
@@ -61,6 +57,18 @@ body {
     margin: 0;
   }
   
+  #content li, #content ul {
+    list-style-type: none;
+    margin-bottom: 0.7em;
+    font-style: italic
+  }
+
+  #content li.writings-list, #content ul.writing-item {
+    list-style-type: none;
+    margin-bottom: 0.7em;
+    font-style: italic
+  }
+
 
   #content p {
     color: #ffffff;
@@ -68,34 +76,13 @@ body {
     font-style: italic
   }
   
-  #content sup.note {
-    display: inline-block;
-    margin-top: -5px;
-  }
-  
-  #content p.notop {
-    margin-top: 0;
-  }
-  
-  #content li, #content ul {
-    list-style-type: none;
-    margin-bottom: 0.7em;
+  #content p.writing-meta {
+    color: #ffffff;
+    line-height: 18px;
     font-style: italic
   }
-  
-  .post + .post {
-    margin-top: 50px;
-  }
-  
-  sup, sub {
-    vertical-align: baseline;
-    position: relative;
-    top: -0.4em;
-  }
-  sub { 
-    top: 0.4em; 
-  }
-  
+
+
 /* picture page styling*/
 
   #picture ul {
