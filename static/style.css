@@ -240,3 +240,26 @@ body {
     color: #FFB6C1;
     text-shadow: 0 0 10px rgba(255, 182, 193, 0.5);
   }
+
+/* Linked images styling */
+  .linked-images {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 20px;
+  }
+
+  .image-link {
+    text-align: center;
+  }
+
+  .image-link a {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .image-link p {
+    margin-top: 10px;
+    color: #fff;
+    font-size: 14px;
+  }
