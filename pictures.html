@@ -3,6 +3,7 @@
   <link rel="stylesheet" href="./static/style.css">
   <meta charset="utf-8">
   <title>Home · Mohsin Malik</title>
+  <script src="./static/lazy-load.js"></script>
 </head>
 
 <!-- page acknowledgements  -->
@@ -30,23 +31,41 @@
 <div id="picture">
   <ul>
     <li><span class=title>buildingThroughTrees</span></li>
-    <img src="./static/images/buildingThroughTrees.P.I.Park.jpg" alt="buildingThroughTrees.P.I.Park.jpg" style="max-width: 60%;"/>
+    <div class="image-container">
+      <img data-src="./static/images/buildingThroughTrees.P.I.Park.jpg" data-alt="buildingThroughTrees.P.I.Park.jpg" style="max-width: 50%;"/>
+    </div>
     <li><span class=title>cow</span></li>
-    <img src="./static/images/cow.jpg" alt="cow.jpg" style="max-width: 60%;"/>
+    <div class="image-container">
+      <img data-src="./static/images/cow.jpg" data-alt="cow.jpg" style="max-width: 50%;"/>
+    </div>
     <li><span class=title>dropletsDroopingLeaves</span></li>
-    <img src="./static/images/dropletsDroopingLeaves.jpg" alt="dropletsDroopingLeaves.jpg" style="max-width: 60%;"/>
+    <div class="image-container">
+      <img data-src="./static/images/dropletsDroopingLeaves.jpg" data-alt="dropletsDroopingLeaves.jpg" style="max-width: 50%;"/>
+    </div>
     <li><span class=title>skyline</span></li>
-    <img src="./static/images/skyline.jpeg" alt="skyline.jpeg" style="max-width: 60%;"/>
+    <div class="image-container">
+      <img data-src="./static/images/skyline.jpeg" data-alt="skyline.jpeg" style="max-width: 50%;"/>
+    </div>
     <li><span class=title>spider</span></li>
-    <img src="./static/images/spider.jpg" alt="spider.jpg" style="max-width: 60%;"/>
+    <div class="image-container">
+      <img data-src="./static/images/spider.jpg" data-alt="spider.jpg" style="max-width: 50%;"/>
+    </div>
     <li><span class=title>spiderandtheLight</span></li>
-    <img src="./static/images/spiderandtheLight.jpg" alt="spiderandtheLight.jpg" style="max-width: 60%;"/>
+    <div class="image-container">
+      <img data-src="./static/images/spiderandtheLight.jpg" data-alt="spiderandtheLight.jpg" style="max-width: 50%;"/>
+    </div>
     <li><span class=title>studioBellCourtNoir</span></li>
-    <img src="./static/images/studioBellCourtNoir.jpg" alt="studioBellCourtNoir.jpg" style="max-width: 60%;"/>
+    <div class="image-container">
+      <img data-src="./static/images/studioBellCourtNoir.jpg" data-alt="studioBellCourtNoir.jpg" style="max-width: 50%;"/>
+    </div>
     <li><span class=title>tToos</span></li>
-    <img src="./static/images/tToos.jpg" alt="tToos.jpg" style="max-width: 60%;"/>
+    <div class="image-container">
+      <img data-src="./static/images/tToos.jpg" data-alt="tToos.jpg" style="max-width: 50%;"/>
+    </div>
     <li><span class=title>towerSky</span></li>
-    <img src="./static/images/towerSky.png" alt="towerSky.png" style="max-width: 60%;"/>
+    <div class="image-container">
+      <img data-src="./static/images/towerSky.png" data-alt="towerSky.png" style="max-width: 50%;"/>
+    </div>
 
   </div>
 
@@ -70,11 +89,27 @@
         </a>
     </div>
 
+    <!-- Other Images Link -->
+    <div class="image-link">
+        <a href="./otherimages.html">
+            <img src="./static/images/otherimages/IMG_1970_Facetune_16-06-2020-19-00-41.jpeg" alt="Other Images">
+            <p>Other Images</p>
+        </a>
+    </div>
+
     <!-- Kenn Link -->
     <div class="image-link">
         <a href="./kenn.html">
             <img src="./static/images/kenn_crt/kenn_balcony.jpg" alt="Kenn">
             <p>Kenn</p>
+        </a>
+    </div>
+
+    <!-- Immih Link -->
+    <div class="image-link">
+        <a href="./immih.html">
+            <img src="./static/images/kenn_crt/immi_crt/immih_balcony.jpg" alt="Immih">
+            <p>Immih</p>
         </a>
     </div>
 </div>

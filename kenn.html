@@ -3,6 +3,24 @@
   <link rel="stylesheet" href="./static/style.css">
   <meta charset="utf-8">
   <title>Kenn · Mohsin Malik</title>
+  <script src="./static/lazy-load.js"></script>
+  <script>
+    // Password protection
+    function checkPassword() {
+      const password = prompt("Enter password to access Kenn page:");
+      if (password === "Chan!Chan1") {
+        // Show the content
+        document.getElementById('protected-content').style.display = 'block';
+        document.getElementById('password-prompt').style.display = 'none';
+      } else {
+        alert("Incorrect password. Access denied.");
+        window.location.href = "./pictures.html";
+      }
+    }
+    
+    // Check password when page loads
+    window.onload = checkPassword;
+  </script>
 </head>
 
 <!-- page acknowledgements  -->
@@ -31,6 +49,14 @@
 <div id="left">&nbsp;</div>
 <div id="content">
 
+    <!-- Password prompt -->
+    <div id="password-prompt" style="text-align: center; margin-top: 50px;">
+        <h2>Accessing Kenn Page...</h2>
+        <p>Please enter the password to continue.</p>
+    </div>
+
+    <!-- Protected content -->
+    <div id="protected-content" style="display: none;">
     <div class="columns">
         <!-- Kenn Column -->
         <div class="column">
@@ -38,9 +64,13 @@
             <div id="picture">
                 <ul>
                 <li><span class=title>beach_thong_front</span></li>
-                <img src="./static/images/kenn_crt/beach_thong_front.jpg" alt="beach_thong_front.jpg" style="max-width: 100%;"/>
+                <div class="image-container">
+                    <img data-src="./static/images/kenn_crt/beach_thong_front.jpg" data-alt="beach_thong_front.jpg" style="max-width: 100%;"/>
+                </div>
                 <li><span class=title>beach_thong</span></li>
-                <img src="./static/images/kenn_crt/beach_thong.jpg" alt="beach_thong.jpg" style="max-width: 100%;"/>
+                <div class="image-container">
+                    <img data-src="./static/images/kenn_crt/beach_thong.jpg" data-alt="beach_thong.jpg" style="max-width: 100%;"/>
+                </div>
                 <li><span class=title>black_full_set_headturn</span></li>
                 <img src="./static/images/kenn_crt/black_full_set_headturn.jpg" alt="black_full_set_headturn.jpg" style="max-width: 100%;"/>
                 <li><span class=title>blue lace look up</span></li>
@@ -123,6 +153,7 @@
                 </ul>
             </div>
         </div>
+    </div>
     </div>
 
 

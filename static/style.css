@@ -130,6 +130,51 @@ body {
     color: #fff;
   }
 
+/* Performance optimizations */
+  .image-container {
+    position: relative;
+    margin-bottom: 20px;
+  }
+  
+  .image-loading {
+    background: #444;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 200px;
+    color: #aaa;
+    font-size: 12px;
+  }
+  
+  .image-container img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 4px;
+    transition: opacity 0.3s ease;
+  }
+  
+  .image-container img[data-loaded="false"] {
+    opacity: 0;
+  }
+  
+  .image-container img[data-loaded="true"] {
+    opacity: 1;
+  }
+  
+  /* Responsive image sizing */
+  @media (max-width: 768px) {
+    .image-container img {
+      max-width: 90%;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .image-container img {
+      max-width: 95%;
+    }
+  }
+
 /* two-column layout for kenn page */
   .columns {
     display: flex;
