@@ -129,3 +129,22 @@ body {
     font-size: 12px;
     color: #fff;
   }
+
+/* two-column layout for kenn page */
+  .columns {
+    display: flex;
+    gap: 20px;
+  }
+  
+  .column {
+    flex: 1;
+  }
+  
+  .column h2 {
+    font-family: "Myriad Pro", "Helvetica Neue", Helvetica;
+    font-size: 16px;
+    color: #fff;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #555;
+    padding-bottom: 5px;
+  }
