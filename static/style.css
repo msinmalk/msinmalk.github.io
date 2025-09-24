@@ -193,3 +193,50 @@ body {
     border-bottom: 1px solid #555;
     padding-bottom: 5px;
   }
+
+/* Fun pop girly effects for kenn page */
+  @keyframes sparkle {
+    0% {
+      opacity: 1;
+      transform: scale(0) rotate(0deg);
+    }
+    50% {
+      opacity: 1;
+      transform: scale(1) rotate(180deg);
+    }
+    100% {
+      opacity: 0;
+      transform: scale(0) rotate(360deg);
+    }
+  }
+
+  @keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+      transform: translateY(0);
+    }
+    40% {
+      transform: translateY(-10px);
+    }
+    60% {
+      transform: translateY(-5px);
+    }
+  }
+
+  .image-container img {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .image-container img:hover {
+    transform: scale(1.02);
+    box-shadow: 0 8px 25px rgba(255, 182, 193, 0.3);
+    animation: bounce 0.6s ease;
+  }
+
+  .column h2 {
+    transition: color 0.3s ease;
+  }
+
+  .column:hover h2 {
+    color: #FFB6C1;
+    text-shadow: 0 0 10px rgba(255, 182, 193, 0.5);
+  }

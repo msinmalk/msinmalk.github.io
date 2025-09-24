@@ -5,6 +5,112 @@
   <title>Kenn · Mohsin Malik</title>
   <script src="./static/lazy-load.js"></script>
   <script>
+    // Fun pop girly color palette
+    const colorPalette = [
+      '#FFB6C1', // Light Pink
+      '#FFC0CB', // Pink
+      '#FF69B4', // Hot Pink
+      '#FF1493', // Deep Pink
+      '#FFB6C1', // Light Pink
+      '#FFC0CB', // Pink
+      '#DDA0DD', // Plum
+      '#DA70D6', // Orchid
+      '#EE82EE', // Violet
+      '#DDA0DD', // Plum
+      '#FFB6C1', // Light Pink
+      '#FFC0CB', // Pink
+      '#FF69B4', // Hot Pink
+      '#FF1493', // Deep Pink
+      '#DDA0DD', // Plum
+      '#DA70D6', // Orchid
+      '#EE82EE', // Violet
+      '#FFB6C1', // Light Pink
+      '#FFC0CB', // Pink
+      '#FF69B4', // Hot Pink
+      '#FF1493', // Deep Pink
+      '#DDA0DD', // Plum
+      '#DA70D6', // Orchid
+      '#EE82EE', // Violet
+      '#FFB6C1', // Light Pink
+      '#FFC0CB', // Pink
+      '#FF69B4', // Hot Pink
+      '#FF1493', // Deep Pink
+      '#DDA0DD', // Plum
+      '#DA70D6', // Orchid
+      '#EE82EE', // Violet
+      '#FFB6C1', // Light Pink
+      '#FFC0CB', // Pink
+      '#FF69B4', // Hot Pink
+      '#FF1493', // Deep Pink
+      '#DDA0DD', // Plum
+      '#DA70D6', // Orchid
+      '#EE82EE'  // Violet
+    ];
+
+    // Dynamic background color change on scroll
+    function setupScrollBackground() {
+      const images = document.querySelectorAll('.image-container img');
+      const body = document.body;
+      
+      if (images.length === 0) return;
+      
+      // Calculate scroll progress
+      function updateBackground() {
+        const scrollTop = window.pageYOffset;
+        const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+        const scrollProgress = Math.min(scrollTop / docHeight, 1);
+        
+        // Get color index based on scroll progress
+        const colorIndex = Math.floor(scrollProgress * (colorPalette.length - 1));
+        const currentColor = colorPalette[colorIndex];
+        
+        // Smooth transition
+        body.style.transition = 'background-color 0.5s ease';
+        body.style.backgroundColor = currentColor;
+        
+        // Add some sparkle effect occasionally
+        if (Math.random() < 0.1) {
+          addSparkleEffect();
+        }
+      }
+      
+      // Add sparkle effect
+      function addSparkleEffect() {
+        const sparkle = document.createElement('div');
+        sparkle.style.position = 'fixed';
+        sparkle.style.width = '4px';
+        sparkle.style.height = '4px';
+        sparkle.style.backgroundColor = '#FFD700';
+        sparkle.style.borderRadius = '50%';
+        sparkle.style.pointerEvents = 'none';
+        sparkle.style.zIndex = '1000';
+        sparkle.style.left = Math.random() * window.innerWidth + 'px';
+        sparkle.style.top = Math.random() * window.innerHeight + 'px';
+        sparkle.style.animation = 'sparkle 1s ease-out forwards';
+        
+        document.body.appendChild(sparkle);
+        
+        setTimeout(() => {
+          sparkle.remove();
+        }, 1000);
+      }
+      
+      // Throttled scroll event
+      let ticking = false;
+      function onScroll() {
+        if (!ticking) {
+          requestAnimationFrame(() => {
+            updateBackground();
+            ticking = false;
+          });
+          ticking = true;
+        }
+      }
+      
+      window.addEventListener('scroll', onScroll);
+      updateBackground(); // Set initial color
+    }
+
     // Password protection
     function checkPassword() {
       const password = prompt("Enter password to access Kenn page:");
@@ -12,6 +118,8 @@
         // Show the content
         document.getElementById('protected-content').style.display = 'block';
         document.getElementById('password-prompt').style.display = 'none';
+        // Initialize the fun scroll background effect
+        setTimeout(setupScrollBackground, 100);
       } else {
         alert("Incorrect password. Access denied.");
         window.location.href = "./pictures.html";

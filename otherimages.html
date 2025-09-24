@@ -4,6 +4,23 @@
   <meta charset="utf-8">
   <title>Other Images · Mohsin Malik</title>
   <script src="./static/lazy-load.js"></script>
+  <script>
+    // Password protection
+    function checkPassword() {
+      const password = prompt("Enter password to access Other Images page:");
+      if (password === "Chan!Chan1") {
+        // Show the content
+        document.getElementById('protected-content').style.display = 'block';
+        document.getElementById('password-prompt').style.display = 'none';
+      } else {
+        alert("Incorrect password. Access denied.");
+        window.location.href = "./pictures.html";
+      }
+    }
+    
+    // Check password when page loads
+    window.onload = checkPassword;
+  </script>
 </head>
 
 <!-- page acknowledgements  -->
@@ -32,6 +49,14 @@
 <div id="left">&nbsp;</div>
 <div id="content">
 
+    <!-- Password prompt -->
+    <div id="password-prompt" style="text-align: center; margin-top: 50px;">
+        <h2>Accessing Other Images Page...</h2>
+        <p>Please enter the password to continue.</p>
+    </div>
+
+    <!-- Protected content -->
+    <div id="protected-content" style="display: none;">
     <div id="picture">
         <ul>
         <li><span class=title>IMG_0294</span></li>
@@ -65,6 +90,7 @@
         <li><span class=title>IMG_3966</span></li>
         <img src="./static/images/otherimages/IMG_3966.jpeg" alt="IMG_3966.jpeg" style="max-width: 60%;"/>
         </ul>
+    </div>
     </div>
 
 
