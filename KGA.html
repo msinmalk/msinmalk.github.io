@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="./static/style.css">
+  <meta charset="utf-8">
+  <title>KGA · Mohsin Malik</title>
+  <script src="./static/lazy-load.js"></script>
+  <script>
+    // Password protection
+    function checkPassword() {
+      const password = prompt("Enter password to access KGA page:");
+      if (password === "Chan!Chan1") {
+        // Show the content
+        document.getElementById('protected-content').style.display = 'block';
+        document.getElementById('password-prompt').style.display = 'none';
+      } else {
+        alert("Incorrect password. Access denied.");
+        window.location.href = "./pictures.html";
+      }
+    }
+
+    // Check password when page loads
+    window.onload = checkPassword;
+  </script>
+</head>
+<body>
+<div id="menu">
+<span class="title">Mohsin Malik</span>
+<ul>
+  <li><a href="/about">About</a></li>
+  <li><a href="/advice">Advice</a></li>
+  <li><a href="/writing">Blog</a></li>
+  <li><a href="/books">Bookshelf</a></li>
+  <li><a href="pictures.html">Culture</a></li>
+  <li><a href="/work">Work</a></li>
+  <li><a href="magdalene.html">Magdalene</a></li>
+</ul>
+</div>
+<div id="left">&nbsp;</div>
+<div id="content">
+
+    <!-- Password Prompt -->
+    <div id="password-prompt" style="text-align: center; margin: 50px 0;">
+        <h1>🔒 KGA Gallery</h1>
+        <p>This page is password protected.</p>
+        <p>Please enter the password to access the content.</p>
+    </div>
+
+    <!-- Protected Content -->
+    <div id="protected-content" style="display: none;">
+        <h1>KGA Gallery</h1>
+        
+        <div class="columns">
+            <div class="column">
+                <h2>KGA Collection</h2>
+                <p>Welcome to the KGA gallery. Content will be added here.</p>
+                
+                <!-- Placeholder for KGA images -->
+                <div class="image-container">
+                    <div class="image-loading" style="width: 100%; height: 300px; background: linear-gradient(45deg, #f0f0f0, #e0e0e0); display: flex; align-items: center; justify-content: center; border-radius: 8px; color: #666;">
+                        KGA Images Coming Soon
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+</body>
+</html>
+
