@@ -5,7 +5,116 @@
   <meta charset="utf-8">
   <title>KGA · Mohsin Malik</title>
   <script src="./static/lazy-load.js"></script>
+  <style>
+    /* Bikini-style shiny scrolling background */
+    body {
+      background: linear-gradient(45deg, #FF69B4, #FF1493, #FFB6C1, #FFC0CB, #FF69B4, #FF1493);
+      background-size: 400% 400%;
+      animation: bikiniShimmer 8s ease-in-out infinite;
+    }
+    
+    @keyframes bikiniShimmer {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+    
+    /* Hot pink image borders */
+    .kga-image {
+      border: 4px solid #FF1493;
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(255, 20, 147, 0.5);
+      transition: all 0.3s ease;
+      margin: 15px;
+    }
+    
+    .kga-image:hover {
+      border-color: #FF69B4;
+      box-shadow: 0 0 30px rgba(255, 105, 180, 0.8);
+      transform: scale(1.05);
+    }
+    
+    .image-caption {
+      background: linear-gradient(45deg, #FF1493, #FF69B4);
+      color: white;
+      padding: 8px 12px;
+      border-radius: 20px;
+      font-weight: bold;
+      text-align: center;
+      margin: 10px 0;
+      box-shadow: 0 4px 15px rgba(255, 20, 147, 0.3);
+    }
+    
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+      padding: 20px;
+    }
+    
+    .image-item {
+      text-align: center;
+      background: rgba(255, 255, 255, 0.9);
+      border-radius: 15px;
+      padding: 15px;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    }
+  </style>
   <script>
+    // Fun bikini color palette for scrolling
+    const bikiniColors = [
+      '#FF69B4', // Hot Pink
+      '#FF1493', // Deep Pink
+      '#FFB6C1', // Light Pink
+      '#FFC0CB', // Pink
+      '#FFB6C1', // Light Pink
+      '#FFC0CB', // Pink
+      '#FF69B4', // Hot Pink
+      '#FF1493', // Deep Pink
+      '#FFB6C1', // Light Pink
+      '#FFC0CB', // Pink
+      '#FF69B4', // Hot Pink
+      '#FF1493', // Deep Pink
+      '#FFB6C1', // Light Pink
+      '#FFC0CB', // Pink
+      '#FF69B4', // Hot Pink
+      '#FF1493'  // Deep Pink
+    ];
+
+    // Dynamic background color change on scroll
+    function setupBikiniBackground() {
+      const images = document.querySelectorAll('.kga-image');
+      const body = document.body;
+
+      if (images.length === 0) return;
+
+      function updateBackground() {
+        const scrollTop = window.pageYOffset;
+        const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+        const scrollProgress = Math.min(scrollTop / docHeight, 1);
+
+        const colorIndex = Math.floor(scrollProgress * (bikiniColors.length - 1));
+        const currentColor = bikiniColors[colorIndex];
+
+        body.style.transition = 'background-color 0.5s ease';
+        body.style.background = `linear-gradient(45deg, ${currentColor}, #FF1493, #FFB6C1, #FFC0CB, ${currentColor}, #FF1493)`;
+      }
+
+      let ticking = false;
+      function onScroll() {
+        if (!ticking) {
+          requestAnimationFrame(() => {
+            updateBackground();
+            ticking = false;
+          });
+          ticking = true;
+        }
+      }
+
+      window.addEventListener('scroll', onScroll);
+      updateBackground();
+    }
+
     // Password protection
     function checkPassword() {
       const password = prompt("Enter password to access KGA page:");
@@ -13,6 +122,8 @@
         // Show the content
         document.getElementById('protected-content').style.display = 'block';
         document.getElementById('password-prompt').style.display = 'none';
+        // Initialize the fun bikini background effect
+        setTimeout(setupBikiniBackground, 100);
       } else {
         alert("Incorrect password. Access denied.");
         window.location.href = "./pictures.html";
@@ -48,19 +159,77 @@
 
     <!-- Protected Content -->
     <div id="protected-content" style="display: none;">
-        <h1>KGA Gallery</h1>
+        <h1>🔥 KGA Gallery 🔥</h1>
         
-        <div class="columns">
-            <div class="column">
-                <h2>KGA Collection</h2>
-                <p>Welcome to the KGA gallery. Content will be added here.</p>
-                
-                <!-- Placeholder for KGA images -->
-                <div class="image-container">
-                    <div class="image-loading" style="width: 100%; height: 300px; background: linear-gradient(45deg, #f0f0f0, #e0e0e0); display: flex; align-items: center; justify-content: center; border-radius: 8px; color: #666;">
-                        KGA Images Coming Soon
-                    </div>
-                </div>
+        <div class="gallery-grid">
+            <div class="image-item">
+                <img data-src="./static/images/kla_crt/4b5d978a-1a88-48d0-b0c1-0f3478fe51bd.jpg" data-alt="KGA Portrait" class="kga-image" style="max-width: 100%; height: 300px; object-fit: cover;">
+                <div class="image-caption">"When you're serving looks but forgot to serve dinner" 💅</div>
+            </div>
+            
+            <div class="image-item">
+                <img data-src="./static/images/kla_crt/56f1dc24-347c-4bd3-b717-b1ff3f7f45fc.jpg" data-alt="KGA Portrait" class="kga-image" style="max-width: 100%; height: 300px; object-fit: cover;">
+                <div class="image-caption">"Main character energy, but make it mysterious" ✨</div>
+            </div>
+            
+            <div class="image-item">
+                <img data-src="./static/images/kla_crt/66fabb1e-ecb6-46fa-852c-ac5296139b20.jpg" data-alt="KGA Portrait" class="kga-image" style="max-width: 100%; height: 300px; object-fit: cover;">
+                <div class="image-caption">"Plotting world domination, one selfie at a time" 👑</div>
+            </div>
+            
+            <div class="image-item">
+                <img data-src="./static/images/kla_crt/69d54452-9fc7-4977-8a61-15abce445325.jpg" data-alt="KGA Portrait" class="kga-image" style="max-width: 100%; height: 300px; object-fit: cover;">
+                <div class="image-caption">"When the lighting hits just right and you feel yourself" ✨</div>
+            </div>
+            
+            <div class="image-item">
+                <img data-src="./static/images/kla_crt/7e928a63-cc80-4dbc-bfb9-cd17a1411255.jpg" data-alt="KGA Portrait" class="kga-image" style="max-width: 100%; height: 300px; object-fit: cover;">
+                <div class="image-caption">"Soft girl era but make it fierce" 🌸</div>
+            </div>
+            
+            <div class="image-item">
+                <img data-src="./static/images/kla_crt/black-set-stilletos.jpg" data-alt="KGA in Black Set" class="kga-image" style="max-width: 100%; height: 300px; object-fit: cover;">
+                <div class="image-caption">"Black is always a good idea, especially with stilettos" 👠</div>
+            </div>
+            
+            <div class="image-item">
+                <img data-src="./static/images/kla_crt/dc6611a2-48d1-4c75-81b1-4eadb384d321.jpg" data-alt="KGA Portrait" class="kga-image" style="max-width: 100%; height: 300px; object-fit: cover;">
+                <div class="image-caption">"Confidence level: Unbothered queen" 💋</div>
+            </div>
+            
+            <div class="image-item">
+                <img data-src="./static/images/kla_crt/e25a588a-1a68-4bb1-92f6-0106a3a2d8a2.jpg" data-alt="KGA Portrait" class="kga-image" style="max-width: 100%; height: 300px; object-fit: cover;">
+                <div class="image-caption">"When you're the main character and you know it" 🎭</div>
+            </div>
+            
+            <div class="image-item">
+                <img data-src="./static/images/kla_crt/eab56766-01b3-475b-8f3e-4d013831e79d.jpg" data-alt="KGA Portrait" class="kga-image" style="max-width: 100%; height: 300px; object-fit: cover;">
+                <div class="image-caption">"Serving face and attitude in equal measure" 😏</div>
+            </div>
+            
+            <div class="image-item">
+                <img data-src="./static/images/kla_crt/fd82bf3a-8531-4dbe-84bb-4bb04a01671e.jpg" data-alt="KGA Portrait" class="kga-image" style="max-width: 100%; height: 300px; object-fit: cover;">
+                <div class="image-caption">"When the camera loves you more than your ex did" 📸</div>
+            </div>
+            
+            <div class="image-item">
+                <img data-src="./static/images/kla_crt/fea7d464-3fe5-465f-a244-7e895843ebb8.jpg" data-alt="KGA Portrait" class="kga-image" style="max-width: 100%; height: 300px; object-fit: cover;">
+                <div class="image-caption">"Natural beauty, unnatural confidence" 🌹</div>
+            </div>
+            
+            <div class="image-item">
+                <img data-src="./static/images/kla_crt/jean-string-back-bodysuit.jpg" data-alt="KGA in Jean Bodysuit" class="kga-image" style="max-width: 100%; height: 300px; object-fit: cover;">
+                <div class="image-caption">"Denim dreams and string theory" 👖</div>
+            </div>
+            
+            <div class="image-item">
+                <img data-src="./static/images/kla_crt/kla_sass.jpg" data-alt="KGA Sass" class="kga-image" style="max-width: 100%; height: 300px; object-fit: cover;">
+                <div class="image-caption">"Sass level: Maximum. Regrets: Zero" 💅</div>
+            </div>
+            
+            <div class="image-item">
+                <img data-src="./static/images/kla_crt/tailing.jpg" data-alt="KGA Tailing" class="kga-image" style="max-width: 100%; height: 300px; object-fit: cover;">
+                <div class="image-caption">"When you're the catch, not the catcher" 🎣</div>
             </div>
         </div>
     </div>
