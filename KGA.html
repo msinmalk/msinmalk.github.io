@@ -8,15 +8,27 @@
   <style>
     /* Bikini-style shiny scrolling background */
     body {
-      background: linear-gradient(45deg, #FF69B4, #FF1493, #FFB6C1, #FFC0CB, #FF69B4, #FF1493);
-      background-size: 400% 400%;
-      animation: bikiniShimmer 8s ease-in-out infinite;
+      background-image: 
+        radial-gradient(circle at 20% 50%, rgba(255, 105, 180, 0.3) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(255, 20, 147, 0.3) 0%, transparent 50%),
+        radial-gradient(circle at 40% 80%, rgba(255, 182, 193, 0.3) 0%, transparent 50%),
+        linear-gradient(45deg, #FF69B4, #FF1493, #FFB6C1, #FFC0CB, #FF69B4, #FF1493);
+      background-size: 400% 400%, 300% 300%, 350% 350%, 400% 400%;
+      animation: bikiniShimmer 8s ease-in-out infinite, wallpaperFloat 12s ease-in-out infinite;
     }
     
     @keyframes bikiniShimmer {
       0% { background-position: 0% 50%; }
       50% { background-position: 100% 50%; }
       100% { background-position: 0% 50%; }
+    }
+    
+    @keyframes wallpaperFloat {
+      0% { background-position: 0% 0%, 0% 0%, 0% 0%, 0% 50%; }
+      25% { background-position: 100% 0%, 50% 25%, 75% 50%, 25% 75%; }
+      50% { background-position: 50% 100%, 100% 50%, 25% 75%, 50% 0%; }
+      75% { background-position: 0% 50%, 25% 75%, 100% 25%, 75% 25%; }
+      100% { background-position: 0% 0%, 0% 0%, 0% 0%, 0% 50%; }
     }
     
     /* Hot pink image borders */
