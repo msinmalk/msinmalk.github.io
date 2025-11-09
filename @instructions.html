@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="./static/style.css">
+  <meta charset="utf-8">
+  <title>Instructions · Mohsin Malik</title>
+  <style>
+    .video-container {
+      margin: 30px 0;
+      text-align: center;
+    }
+    
+    .video-container video {
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+      background: #000;
+    }
+    
+    .video-title {
+      font-family: "Myriad Pro", "Helvetica Neue", Helvetica;
+      font-size: 16px;
+      color: #fff;
+      margin-bottom: 10px;
+      font-weight: normal;
+    }
+    
+    .video-description {
+      font-size: 12px;
+      color: #aaa;
+      margin-top: 8px;
+      font-style: italic;
+    }
+    
+    #content {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    
+    .video-wrapper {
+      background: rgba(255, 255, 255, 0.05);
+      padding: 20px;
+      border-radius: 8px;
+      margin-bottom: 30px;
+    }
+  </style>
+  <script>
+    // Password protection
+    function checkPassword() {
+      const password = prompt("Enter password to access Instructions page:");
+      if (password === "Chan!Chan1") {
+        document.getElementById('protected-content').style.display = 'block';
+        document.getElementById('password-prompt').style.display = 'none';
+      } else {
+        alert("Incorrect password. Access denied.");
+        window.location.href = "./pictures.html";
+      }
+    }
+    
+    window.onload = checkPassword;
+  </script>
+</head>
+
+<!-- page acknowledgements  -->
+<div id="inspiration">
+  <address class="byline">inspired by Aaron Swartz, Patrick Collison, Richard Wu, and others</address>
+</div>
+
+<!-- profile image -->
+<div id="profileimg">
+  <img src="./static/images/darkportrait.jpg" alt="portrait" style="max-width: 10%;">
+</div>
+
+<!-- page contents -->
+<body>
+<div id="menu">
+<span class="title">Mohsin Malik</span>
+<ul>
+  <li><a href="/about">About</a></li>
+  <li><a href="/advice">Advice</a></li>
+  <li><a href="/writing">Blog</a></li>
+  <li><a href="/books">Bookshelf</a></li>
+  <li><a href="pictures.html">Culture</a></li>
+  <li><a href="/work">Work</a></li>
+</ul>
+</div>
+<div id="left">&nbsp;</div>
+<div id="content">
+
+    <!-- Password prompt -->
+    <div id="password-prompt" style="text-align: center; margin-top: 50px;">
+        <h2>Accessing Instructions Page...</h2>
+        <p>Please enter the password to continue.</p>
+    </div>
+
+    <!-- Protected content -->
+    <div id="protected-content" style="display: none;">
+    
+    <div style="margin-bottom: 20px; text-align: center; padding: 15px; background: rgba(255, 255, 255, 0.05); border-radius: 8px;">
+        <a href="./@kenn.html" style="color: #0864c7; margin: 0 15px; text-decoration: none;">← Back to Kenn</a>
+        <span style="color: #666;">|</span>
+        <a href="./@za.html" style="color: #0864c7; margin: 0 15px; text-decoration: none;">Za</a>
+    </div>
+    
+    <h1>Instructions</h1>
+    <p style="color: #aaa; margin-bottom: 30px;">WowArielle Videos</p>
+    
+    <div class="video-wrapper">
+        <div class="video-container">
+            <div class="video-title">Erotic Smoke Training</div>
+            <video controls preload="metadata" poster="">
+                <source src="./static/WowArielle_Erotic_Smoke_Training_Downloaded_2025_10_27_12_26_34.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="video-description">Downloaded: October 27, 2025</div>
+        </div>
+    </div>
+    
+    <div class="video-wrapper">
+        <div class="video-container">
+            <div class="video-title">Smoke & Serve Princess</div>
+            <video controls preload="metadata" poster="">
+                <source src="./static/WowArielle_Smoke_amp_Serve_Princess_Downloaded_2025_10_23_11_28_21.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="video-description">Downloaded: October 23, 2025</div>
+        </div>
+    </div>
+    
+    <div class="video-wrapper">
+        <div class="video-container">
+            <div class="video-title">Smoke & Simp</div>
+            <video controls preload="metadata" poster="">
+                <source src="./static/WowArielle_Smoke_amp_Simp_Downloaded_2025_10_23_11_22_34.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="video-description">Downloaded: October 23, 2025</div>
+        </div>
+    </div>
+    
+    <div class="video-wrapper">
+        <div class="video-container">
+            <div class="video-title">Smoke Yourself Stupid</div>
+            <video controls preload="metadata" poster="">
+                <source src="./static/WowArielle_Smoke_Yourself_Stupid_Downloaded_2025_10_08_17_34_15.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="video-description">Downloaded: October 8, 2025</div>
+        </div>
+    </div>
+    
+    </div>
+
+</div>
+</body>
+
+</html>
+
