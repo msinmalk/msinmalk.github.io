@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html>
 <head>
   <link rel="stylesheet" href="./static/style.css">
@@ -10,6 +9,7 @@
     function checkPassword() {
       const password = prompt("Enter password to access Za page:");
       if (password === "Chan!Chan1") {
+        // Show the content
         document.getElementById('protected-content').style.display = 'block';
         document.getElementById('password-prompt').style.display = 'none';
       } else {
@@ -18,6 +18,7 @@
       }
     }
     
+    // Check password when page loads
     window.onload = checkPassword;
   </script>
 </head>
@@ -56,83 +57,56 @@
 
     <!-- Protected content -->
     <div id="protected-content" style="display: none;">
-    <div style="margin-bottom: 20px; text-align: center; padding: 15px; background: rgba(255, 255, 255, 0.05); border-radius: 8px;">
-        <a href="./@kenn.html" style="color: #0864c7; margin: 0 15px; text-decoration: none;">← Back to Kenn</a>
-        <span style="color: #666;">|</span>
-        <a href="./@instructions.html" style="color: #0864c7; margin: 0 15px; text-decoration: none;">Instructions</a>
-    </div>
     <div id="picture">
         <ul>
-        <li><span class="title">za_001</span></li>
+        <li><span class=title>za_001</span></li>
         <div class="image-container">
-            <img data-src="./static/images/otherimages/za/0f231db4-90b1-4087-b2d5-d6785d35e7b2.jpg" data-alt="za_001" style="max-width: 100%;"/>
+            <img data-src="./static/images/otherimages/za/0f231db4-90b1-4087-b2d5-d6785d35e7b2.jpg" data-alt="za_001.jpg" style="max-width: 50%;"/>
         </div>
-        <li><span class="title">za_002</span></li>
+        <li><span class=title>za_002</span></li>
         <div class="image-container">
-            <img data-src="./static/images/otherimages/za/23a24eed-a3df-4e3f-8470-3ae474500c55.jpg" data-alt="za_002" style="max-width: 100%;"/>
+            <img data-src="./static/images/otherimages/za/23a24eed-a3df-4e3f-8470-3ae474500c55.jpg" data-alt="za_002.jpg" style="max-width: 50%;"/>
         </div>
-        <li><span class="title">za_003</span></li>
+        <li><span class=title>za_003</span></li>
         <div class="image-container">
-            <img data-src="./static/images/otherimages/za/26a17656-f736-40a7-9c9e-7b623ff7513d.jpg" data-alt="za_003" style="max-width: 100%;"/>
+            <img data-src="./static/images/otherimages/za/26a17656-f736-40a7-9c9e-7b623ff7513d.jpg" data-alt="za_003.jpg" style="max-width: 50%;"/>
         </div>
-        <li><span class="title">za_004</span></li>
+        <li><span class=title>za_004</span></li>
         <div class="image-container">
-            <img data-src="./static/images/otherimages/za/2ff48d3a-c979-4940-be13-b8481f9f878d.jpg" data-alt="za_004" style="max-width: 100%;"/>
+            <img data-src="./static/images/otherimages/za/2ff48d3a-c979-4940-be13-b8481f9f878d.jpg" data-alt="za_004.jpg" style="max-width: 50%;"/>
         </div>
-        <li><span class="title">za_005</span></li>
-        <div class="image-container">
-            <img data-src="./static/images/otherimages/za/4ebfb02e-13c2-4a41-aef4-09ed2744b1c4.jpg" data-alt="za_005" style="max-width: 100%;"/>
-        </div>
-        <li><span class="title">za_006</span></li>
-        <div class="image-container">
-            <img data-src="./static/images/otherimages/za/a2b3cd56-ae00-4915-8a5c-d6c87b07fdf8.jpg" data-alt="za_006" style="max-width: 100%;"/>
-        </div>
-        <li><span class="title">za_007</span></li>
-        <div class="image-container">
-            <img data-src="./static/images/otherimages/za/a2bb361a-9784-4332-8bb4-8cdf01fc9dac.jpg" data-alt="za_007" style="max-width: 100%;"/>
-        </div>
-        <li><span class="title">za_008</span></li>
-        <div class="image-container">
-            <img data-src="./static/images/otherimages/za/a36f4728-c734-4952-8786-2551be7fd28c.jpg" data-alt="za_008" style="max-width: 100%;"/>
-        </div>
-        <li><span class="title">za_009</span></li>
-        <div class="image-container">
-            <img data-src="./static/images/otherimages/za/aa19d9cd-79c2-4698-b6a8-668cb172be9b.jpg" data-alt="za_009" style="max-width: 100%;"/>
-        </div>
-        <li><span class="title">za_010</span></li>
-        <div class="image-container">
-            <img data-src="./static/images/otherimages/za/add23987-65e2-48d4-9434-234808076228.jpg" data-alt="za_010" style="max-width: 100%;"/>
-        </div>
-        <li><span class="title">za_011</span></li>
-        <div class="image-container">
-            <img data-src="./static/images/otherimages/za/b1832eec-4a3b-43ec-8cd0-082593175b63.jpg" data-alt="za_011" style="max-width: 100%;"/>
-        </div>
-        <li><span class="title">za_012</span></li>
-        <div class="image-container">
-            <img data-src="./static/images/otherimages/za/bd970ad2-aacb-4c70-8e34-459211ffaac0.jpg" data-alt="za_012" style="max-width: 100%;"/>
-        </div>
-        <li><span class="title">za_013</span></li>
-        <div class="image-container">
-            <img data-src="./static/images/otherimages/za/de35e709-dcaa-4977-bd22-5ef3ea65b49b.jpg" data-alt="za_013" style="max-width: 100%;"/>
-        </div>
-        <li><span class="title">za_014</span></li>
-        <div class="image-container">
-            <img data-src="./static/images/otherimages/za/df902cce-c2e6-491e-956d-0adbe1cc2f3a.jpg" data-alt="za_014" style="max-width: 100%;"/>
-        </div>
-        <li><span class="title">za_015</span></li>
-        <div class="image-container">
-            <img data-src="./static/images/otherimages/za/e0ee50e9-ba62-4d80-95b8-81324885353f.jpg" data-alt="za_015" style="max-width: 100%;"/>
-        </div>
-        <li><span class="title">za_016</span></li>
-        <div class="image-container">
-            <img data-src="./static/images/otherimages/za/f2448db0-5511-4f20-b131-fe447b6cb88c.jpg" data-alt="za_016" style="max-width: 100%;"/>
-        </div>
+        <li><span class=title>za_005</span></li>
+        <img src="./static/images/otherimages/za/4ebfb02e-13c2-4a41-aef4-09ed2744b1c4.jpg" alt="za_005.jpg" style="max-width: 50%;"/>
+        <li><span class=title>za_006</span></li>
+        <img src="./static/images/otherimages/za/a2b3cd56-ae00-4915-8a5c-d6c87b07fdf8.jpg" alt="za_006.jpg" style="max-width: 50%;"/>
+        <li><span class=title>za_007</span></li>
+        <img src="./static/images/otherimages/za/a2bb361a-9784-4332-8bb4-8cdf01fc9dac.jpg" alt="za_007.jpg" style="max-width: 50%;"/>
+        <li><span class=title>za_008</span></li>
+        <img src="./static/images/otherimages/za/a36f4728-c734-4952-8786-2551be7fd28c.jpg" alt="za_008.jpg" style="max-width: 50%;"/>
+        <li><span class=title>za_009</span></li>
+        <img src="./static/images/otherimages/za/aa19d9cd-79c2-4698-b6a8-668cb172be9b.jpg" alt="za_009.jpg" style="max-width: 50%;"/>
+        <li><span class=title>za_010</span></li>
+        <img src="./static/images/otherimages/za/add23987-65e2-48d4-9434-234808076228.jpg" alt="za_010.jpg" style="max-width: 50%;"/>
+        <li><span class=title>za_011</span></li>
+        <img src="./static/images/otherimages/za/b1832eec-4a3b-43ec-8cd0-082593175b63.jpg" alt="za_011.jpg" style="max-width: 50%;"/>
+        <li><span class=title>za_012</span></li>
+        <img src="./static/images/otherimages/za/bd970ad2-aacb-4c70-8e34-459211ffaac0.jpg" alt="za_012.jpg" style="max-width: 50%;"/>
+        <li><span class=title>za_013</span></li>
+        <img src="./static/images/otherimages/za/de35e709-dcaa-4977-bd22-5ef3ea65b49b.jpg" alt="za_013.jpg" style="max-width: 50%;"/>
+        <li><span class=title>za_014</span></li>
+        <img src="./static/images/otherimages/za/df902cce-c2e6-491e-956d-0adbe1cc2f3a.jpg" alt="za_014.jpg" style="max-width: 50%;"/>
+        <li><span class=title>za_015</span></li>
+        <img src="./static/images/otherimages/za/e0ee50e9-ba62-4d80-95b8-81324885353f.jpg" alt="za_015.jpg" style="max-width: 50%;"/>
+        <li><span class=title>za_016</span></li>
+        <img src="./static/images/otherimages/za/f2448db0-5511-4f20-b131-fe447b6cb88c.jpg" alt="za_016.jpg" style="max-width: 50%;"/>
         </ul>
     </div>
     </div>
 
+
+
 </div>
 </body>
 
-</html>
 
+</html>
