@@ -4,10 +4,21 @@
   <meta charset="utf-8">
   <title>Instructions · Mohsin Malik</title>
   <script>
-    // Password protection
+    // Password protection with session persistence
     function checkPassword() {
+      // Check if already authenticated in this session
+      if (sessionStorage.getItem('authenticated') === 'true') {
+        // Show the content immediately
+        document.getElementById('protected-content').style.display = 'block';
+        document.getElementById('password-prompt').style.display = 'none';
+        return;
+      }
+      
+      // Otherwise, prompt for password
       const password = prompt("Enter password to access Instructions page:");
       if (password === "Chan!Chan1") {
+        // Store authentication in sessionStorage
+        sessionStorage.setItem('authenticated', 'true');
         // Show the content
         document.getElementById('protected-content').style.display = 'block';
         document.getElementById('password-prompt').style.display = 'none';

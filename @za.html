@@ -4,10 +4,33 @@
   <meta charset="utf-8">
   <title>Za · Mohsin Malik</title>
   <script>
-    // Password protection
+    // Password protection with session persistence
     function checkPassword() {
+      // Check if already authenticated in this session
+      if (sessionStorage.getItem('authenticated') === 'true') {
+        // Show the content immediately
+        document.getElementById('protected-content').style.display = 'block';
+        document.getElementById('password-prompt').style.display = 'none';
+        // Load all images after content is visible
+        setTimeout(() => {
+          const images = document.querySelectorAll('img[data-src]');
+          images.forEach(img => {
+            const src = img.getAttribute('data-src');
+            const alt = img.getAttribute('data-alt') || '';
+            img.src = src;
+            img.alt = alt;
+            img.removeAttribute('data-src');
+            img.removeAttribute('data-alt');
+          });
+        }, 100);
+        return;
+      }
+      
+      // Otherwise, prompt for password
       const password = prompt("Enter password to access Za page:");
       if (password === "Chan!Chan1") {
+        // Store authentication in sessionStorage
+        sessionStorage.setItem('authenticated', 'true');
         // Show the content
         document.getElementById('protected-content').style.display = 'block';
         document.getElementById('password-prompt').style.display = 'none';

@@ -113,8 +113,21 @@
 
     // Password protection
     function checkPassword() {
+      // Check if already authenticated in this session
+      if (sessionStorage.getItem('authenticated') === 'true') {
+        // Show the content immediately
+        document.getElementById('protected-content').style.display = 'block';
+        document.getElementById('password-prompt').style.display = 'none';
+        // Initialize the fun scroll background effect
+        setTimeout(setupScrollBackground, 100);
+        return;
+      }
+      
+      // Otherwise, prompt for password
       const password = prompt("Enter password to access Kenn page:");
       if (password === "Chan!Chan1") {
+        // Store authentication in sessionStorage
+        sessionStorage.setItem('authenticated', 'true');
         // Show the content
         document.getElementById('protected-content').style.display = 'block';
         document.getElementById('password-prompt').style.display = 'none';

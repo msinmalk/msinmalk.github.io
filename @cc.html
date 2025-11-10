@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="./static/style.css">
+  <meta charset="utf-8">
+  <title>CC · Mohsin Malik</title>
+  <script src="./static/lazy-load.js"></script>
+  <style>
+    /* Bikini-style shiny scrolling background */
+    body {
+      background-image: 
+        radial-gradient(circle at 20% 50%, rgba(255, 105, 180, 0.3) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(255, 20, 147, 0.3) 0%, transparent 50%),
+        radial-gradient(circle at 40% 80%, rgba(255, 182, 193, 0.3) 0%, transparent 50%),
+        linear-gradient(45deg, #FF69B4, #FF1493, #FFB6C1, #FFC0CB, #FF69B4, #FF1493);
+      background-size: 400% 400%, 300% 300%, 350% 350%, 400% 400%;
+      animation: bikiniShimmer 8s ease-in-out infinite, wallpaperFloat 12s ease-in-out infinite;
+    }
+    
+    @keyframes bikiniShimmer {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+    
+    @keyframes wallpaperFloat {
+      0% { background-position: 0% 0%, 0% 0%, 0% 0%, 0% 50%; }
+      25% { background-position: 100% 0%, 50% 25%, 75% 50%, 25% 75%; }
+      50% { background-position: 50% 100%, 100% 50%, 25% 75%, 50% 0%; }
+      75% { background-position: 0% 50%, 25% 75%, 100% 25%, 75% 25%; }
+      100% { background-position: 0% 0%, 0% 0%, 0% 0%, 0% 50%; }
+    }
+    
+    /* Hot pink image borders */
+    .cc-image {
+      border: 4px solid #FF1493;
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(255, 20, 147, 0.5);
+      transition: all 0.3s ease;
+      margin: 15px;
+    }
+    
+    .cc-image:hover {
+      border-color: #FF69B4;
+      box-shadow: 0 0 30px rgba(255, 105, 180, 0.8);
+      transform: scale(1.05);
+    }
+    
+    .image-caption {
+      background: linear-gradient(45deg, #FF1493, #FF69B4);
+      color: white;
+      padding: 8px 12px;
+      border-radius: 20px;
+      font-weight: bold;
+      text-align: center;
+      margin: 10px 0;
+      box-shadow: 0 4px 15px rgba(255, 20, 147, 0.3);
+    }
+    
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+      padding: 20px;
+    }
+    
+    .image-item {
+      text-align: center;
+      background: rgba(255, 255, 255, 0.9);
+      border-radius: 15px;
+      padding: 15px;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    }
+  </style>
+  <script>
+    // Fun bikini color palette for scrolling
+    const bikiniColors = [
+      '#FF69B4', // Hot Pink
+      '#FF1493', // Deep Pink
+      '#FFB6C1', // Light Pink
+      '#FFC0CB', // Pink
+      '#FFB6C1', // Light Pink
+      '#FFC0CB', // Pink
+      '#FF69B4', // Hot Pink
+      '#FF1493', // Deep Pink
+      '#FFB6C1', // Light Pink
+      '#FFC0CB', // Pink
+      '#FF69B4', // Hot Pink
+      '#FF1493', // Deep Pink
+      '#FFB6C1', // Light Pink
+      '#FFC0CB', // Pink
+      '#FF69B4', // Hot Pink
+      '#FF1493'  // Deep Pink
+    ];
+
+    // Dynamic background color change on scroll
+    function setupBikiniBackground() {
+      const images = document.querySelectorAll('.cc-image');
+      const body = document.body;
+
+      if (images.length === 0) return;
+
+      function updateBackground() {
+        const scrollTop = window.pageYOffset;
+        const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+        const scrollProgress = Math.min(scrollTop / docHeight, 1);
+
+        const colorIndex = Math.floor(scrollProgress * (bikiniColors.length - 1));
+        const currentColor = bikiniColors[colorIndex];
+
+        body.style.transition = 'background-color 0.5s ease';
+        body.style.background = `linear-gradient(45deg, ${currentColor}, #FF1493, #FFB6C1, #FFC0CB, ${currentColor}, #FF1493)`;
+      }
+
+      let ticking = false;
+      function onScroll() {
+        if (!ticking) {
+          requestAnimationFrame(() => {
+            updateBackground();
+            ticking = false;
+          });
+          ticking = true;
+        }
+      }
+
+      window.addEventListener('scroll', onScroll);
+      updateBackground();
+    }
+
+    // Password protection with session persistence
+    function checkPassword() {
+      // Check if already authenticated in this session
+      if (sessionStorage.getItem('authenticated') === 'true') {
+        // Show the content immediately
+        document.getElementById('protected-content').style.display = 'block';
+        document.getElementById('password-prompt').style.display = 'none';
+        // Initialize the fun bikini background effect
+        setTimeout(setupBikiniBackground, 100);
+        return;
+      }
+      
+      // Otherwise, prompt for password
+      const password = prompt("Enter password to access CC page:");
+      if (password === "Chan!Chan1") {
+        // Store authentication in sessionStorage
+        sessionStorage.setItem('authenticated', 'true');
+        // Show the content
+        document.getElementById('protected-content').style.display = 'block';
+        document.getElementById('password-prompt').style.display = 'none';
+        // Initialize the fun bikini background effect
+        setTimeout(setupBikiniBackground, 100);
+      } else {
+        alert("Incorrect password. Access denied.");
+        window.location.href = "./pictures.html";
+      }
+    }
+
+    // Check password when page loads
+    window.onload = checkPassword;
+  </script>
+</head>
+<body>
+<div id="menu">
+<span class="title">Mohsin Malik</span>
+<ul>
+  <li><a href="/about">About</a></li>
+  <li><a href="/advice">Advice</a></li>
+  <li><a href="/writing">Blog</a></li>
+  <li><a href="/books">Bookshelf</a></li>
+  <li><a href="pictures.html">Culture</a></li>
+  <li><a href="/work">Work</a></li>
+  <li><a href="@mjt.html">Magdalene</a></li>
+</ul>
+</div>
+<div id="left">&nbsp;</div>
+<div id="content">
+
+    <!-- Password Prompt -->
+    <div id="password-prompt" style="text-align: center; margin: 50px 0;">
+        <h1>🔒 CC Gallery</h1>
+        <p>This page is password protected.</p>
+        <p>Please enter the password to access the content.</p>
+    </div>
+
+    <!-- Protected Content -->
+    <div id="protected-content" style="display: none;">
+        <h1>💖 CC Gallery 💖</h1>
+        
+        <div class="gallery-grid">
+            <div class="image-item">
+                <img data-src="./static/images/ch_crt/ab1e1960-eb15-4b07-842a-bb407f311dd2.jpg" data-alt="CC Portrait" class="cc-image" style="max-width: 100%; height: 300px; object-fit: cover;">
+                <div class="image-caption">"When you're the main character and everyone knows it" ✨</div>
+            </div>
+            <div class="image-item">
+                <img data-src="./static/images/ch_crt/0af58d13-a95e-45b4-b7bf-28ac1ad3c49b.jpg" data-alt="CC Portrait" class="cc-image" style="max-width: 100%; height: 300px; object-fit: cover;">
+                <div class="image-caption">"Serving looks and taking names" 💅</div>
+            </div>
+            <div class="image-item">
+                <img data-src="./static/images/ch_crt/2e677829-449a-4e0a-91b2-dbab42db2793.jpg" data-alt="CC Portrait" class="cc-image" style="max-width: 100%; height: 300px; object-fit: cover;">
+                <div class="image-caption">"Plotting world domination one pose at a time" 🌍</div>
+            </div>
+            <div class="image-item">
+                <img data-src="./static/images/ch_crt/5759ed3a-87f6-41fb-aa26-53718a52044d.jpg" data-alt="CC Portrait" class="cc-image" style="max-width: 100%; height: 300px; object-fit: cover;">
+                <div class="image-caption">"Confidence level: Unmatched" 🔥</div>
+            </div>
+            <div class="image-item">
+                <img data-src="./static/images/ch_crt/77e82f81-3381-49e6-bb2e-6df58c87ad2c.jpg" data-alt="CC Portrait" class="cc-image" style="max-width: 100%; height: 300px; object-fit: cover;">
+                <div class="image-caption">"When you wake up like this" ☀️</div>
+            </div>
+            <div class="image-item">
+                <img data-src="./static/images/ch_crt/90bd0937-dd0b-4df6-a1e3-29431c2e892c.jpg" data-alt="CC Portrait" class="cc-image" style="max-width: 100%; height: 300px; object-fit: cover;">
+                <div class="image-caption">"Boss energy only" 👑</div>
+            </div>
+            <div class="image-item">
+                <img data-src="./static/images/ch_crt/93d9be38-5e6e-49b6-a27a-d3458585df88.jpg" data-alt="CC Portrait" class="cc-image" style="max-width: 100%; height: 300px; object-fit: cover;">
+                <div class="image-caption">"Making ordinary moments extraordinary" ✨</div>
+            </div>
+            <div class="image-item">
+                <img data-src="./static/images/ch_crt/be99cbcf-e216-481d-88e1-1f7c965ebd61.jpg" data-alt="CC Portrait" class="cc-image" style="max-width: 100%; height: 300px; object-fit: cover;">
+                <div class="image-caption">"Serving face and taking space" 💋</div>
+            </div>
+            <div class="image-item">
+                <img data-src="./static/images/ch_crt/c07669db-a13e-4ed1-b3ad-13812a1792c1.jpg" data-alt="CC Portrait" class="cc-image" style="max-width: 100%; height: 300px; object-fit: cover;">
+                <div class="image-caption">"When you're the vibe everyone wants" 🌟</div>
+            </div>
+            <div class="image-item">
+                <img data-src="./static/images/ch_crt/c6c2c6d8-ae44-4b02-915b-f9784ec2ace5.jpg" data-alt="CC Portrait" class="cc-image" style="max-width: 100%; height: 300px; object-fit: cover;">
+                <div class="image-caption">"Confidence is the best accessory" 💎</div>
+            </div>
+            <div class="image-item">
+                <img data-src="./static/images/ch_crt/d74f2207-f06a-4be5-9609-88cb81c555aa.jpg" data-alt="CC Portrait" class="cc-image" style="max-width: 100%; height: 300px; object-fit: cover;">
+                <div class="image-caption">"Living my best life unapologetically" 🎯</div>
+            </div>
+            <div class="image-item">
+                <img data-src="./static/images/ch_crt/f46f6e46-2816-4509-a6fb-1acb4d72985d.jpg" data-alt="CC Portrait" class="cc-image" style="max-width: 100%; height: 300px; object-fit: cover;">
+                <div class="image-caption">"Main character energy activated" 🎬</div>
+            </div>
+            <div class="image-item">
+                <img data-src="./static/images/ch_crt/f7a54906-2bdb-40cc-802b-723784a07e8d.jpg" data-alt="CC Portrait" class="cc-image" style="max-width: 100%; height: 300px; object-fit: cover;">
+                <div class="image-caption">"When you're the whole mood" 🌈</div>
+            </div>
+            <div class="image-item">
+                <img data-src="./static/images/ch_crt/0f29f9d8-fe68-4a41-bbb1-06231b1761d0.jpg" data-alt="CC Portrait" class="cc-image" style="max-width: 100%; height: 300px; object-fit: cover;">
+                <div class="image-caption">"Serving elegance and attitude" 💃</div>
+            </div>
+            <div class="image-item">
+                <img data-src="./static/images/ch_crt/4e8ab25b-944a-4e57-bf29-32a3469e2645.jpg" data-alt="CC Portrait" class="cc-image" style="max-width: 100%; height: 300px; object-fit: cover;">
+                <div class="image-caption">"Confidence is my superpower" ⚡</div>
+            </div>
+            <div class="image-item">
+                <img data-src="./static/images/ch_crt/88fb4cfd-5e9e-4182-a247-09927837ec0d.jpg" data-alt="CC Portrait" class="cc-image" style="max-width: 100%; height: 300px; object-fit: cover;">
+                <div class="image-caption">"Making every day a photoshoot" 📸</div>
+            </div>
+            <div class="image-item">
+                <img data-src="./static/images/ch_crt/a19c44d5-affe-4d6c-a2de-adf677985cd5.jpg" data-alt="CC Portrait" class="cc-image" style="max-width: 100%; height: 300px; object-fit: cover;">
+                <div class="image-caption">"Boss babe energy activated" 💪</div>
+            </div>
+        </div>
+    </div>
+
+</div>
+</body>
+</html>
+

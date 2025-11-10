@@ -1,0 +1,69 @@
+<html>
+<head>
+  <link rel="stylesheet" href="./static/style.css">
+  <meta charset="utf-8">
+  <title>Immih · Mohsin Malik</title>
+  <script>
+    // Password protection with session persistence
+    function checkPassword() {
+      // Check if already authenticated in this session
+      if (sessionStorage.getItem('authenticated') === 'true') {
+        // Redirect to kenn page immediately
+        window.location.href = "./@kenn.html";
+        return;
+      }
+      
+      // Otherwise, prompt for password
+      const password = prompt("Enter password to access Immih page:");
+      if (password === "Chan!Chan1") {
+        // Store authentication in sessionStorage
+        sessionStorage.setItem('authenticated', 'true');
+        // Redirect to kenn page
+        window.location.href = "./@kenn.html";
+      } else {
+        alert("Incorrect password. Access denied.");
+        window.location.href = "./pictures.html";
+      }
+    }
+    
+    // Check password when page loads
+    window.onload = checkPassword;
+  </script>
+</head>
+
+<!-- page acknowledgements  -->
+<div id="inspiration">
+  <address class="byline">inspired by Aaron Swartz, Patrick Collison, Richard Wu, and others</address>
+</div>
+
+<!-- profile image -->
+<div id="profileimg">
+  <img src="./static/images/darkportrait.jpg" alt="portrait" style="max-width: 10%;">
+</div>
+
+<!-- page contents -->
+<body>
+<div id="menu">
+<span class="title">Mohsin Malik</span>
+<ul>
+  <li><a href="/about">About</a></li>
+  <li><a href="/advice">Advice</a></li>
+  <li><a href="/writing">Blog</a></li>
+  <li><a href="/books">Bookshelf</a></li>
+  <li><a href="pictures.html">Culture</a></li>
+  <li><a href="/work">Work</a></li>
+</ul>
+</div>
+<div id="left">&nbsp;</div>
+<div id="content">
+
+    <div style="text-align: center; margin-top: 50px;">
+        <h2>Accessing Immih Page...</h2>
+        <p>Please enter the password to continue.</p>
+    </div>
+
+</div>
+</body>
+
+
+</html>
