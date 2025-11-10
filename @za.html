@@ -3,10 +3,7 @@
   <link rel="stylesheet" href="./static/style.css">
   <meta charset="utf-8">
   <title>Za · Mohsin Malik</title>
-  <script src="./static/lazy-load.js"></script>
   <script>
-    let imageLoader = null;
-    
     // Password protection
     function checkPassword() {
       const password = prompt("Enter password to access Za page:");
@@ -14,9 +11,17 @@
         // Show the content
         document.getElementById('protected-content').style.display = 'block';
         document.getElementById('password-prompt').style.display = 'none';
-        // Initialize lazy loading after content is visible
+        // Load all images after content is visible
         setTimeout(() => {
-          imageLoader = new ImageLoader();
+          const images = document.querySelectorAll('img[data-src]');
+          images.forEach(img => {
+            const src = img.getAttribute('data-src');
+            const alt = img.getAttribute('data-alt') || '';
+            img.src = src;
+            img.alt = alt;
+            img.removeAttribute('data-src');
+            img.removeAttribute('data-alt');
+          });
         }, 100);
       } else {
         alert("Incorrect password. Access denied.");
