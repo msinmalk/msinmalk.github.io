@@ -1,0 +1,147 @@
+<html>
+<head>
+  <link rel="stylesheet" href="./static/style.css">
+  <meta charset="utf-8">
+  <title>Secure · Mohsin Malik</title>
+  <script>
+    // Password protection
+    function checkPassword() {
+      const password = prompt("Enter password to access protected pages:");
+      if (password === "Chan!Chan1") {
+        // Show the content
+        document.getElementById('protected-content').style.display = 'block';
+        document.getElementById('password-prompt').style.display = 'none';
+      } else {
+        alert("Incorrect password. Access denied.");
+        window.location.href = "./index.html";
+      }
+    }
+    
+    // Check password when page loads
+    window.onload = checkPassword;
+  </script>
+</head>
+
+<!-- page acknowledgements  -->
+<div id="inspiration">
+  <address class="byline">inspired by Aaron Swartz, Patrick Collison, Richard Wu, and others</address>
+</div>
+
+<!-- profile image -->
+<div id="profileimg">
+  <img src="./static/images/darkportrait.jpg" alt="portrait" style="max-width: 10%;">
+</div>
+
+<!-- page contents -->
+<body>
+<div id="menu">
+<span class="title">Mohsin Malik</span>
+<ul>
+  <li><a href="/about">About</a></li>
+  <li><a href="/advice">Advice</a></li>
+  <li><a href="/writing">Blog</a></li>
+  <li><a href="/books">Bookshelf</a></li>
+  <li><a href="pictures.html">Culture</a></li>
+  <li><a href="/work">Work</a></li>
+</ul>
+</div>
+<div id="left">&nbsp;</div>
+<div id="content">
+
+    <!-- Password prompt -->
+    <div id="password-prompt" style="text-align: center; margin-top: 50px;">
+        <h2>Accessing Protected Pages...</h2>
+        <p>Please enter the password to continue.</p>
+    </div>
+
+    <!-- Protected content -->
+    <div id="protected-content" style="display: none;">
+    <h1>Protected Pages</h1>
+    <div class="linked-images">
+        <!-- Kenn Link -->
+        <div class="image-link">
+            <a href="./@kenn.html">
+                <div style="width: 200px; height: 200px; background: linear-gradient(45deg, #DEB887, #F4A460); display: flex; align-items: center; justify-content: center; border-radius: 8px; color: #666; font-weight: normal; text-align: center; border: 1px solid #DDD;">
+                    Kenn<br><small>Password Protected</small>
+                </div>
+                <p>Kenn</p>
+            </a>
+        </div>
+
+        <!-- Immih Link -->
+        <div class="image-link">
+            <a href="./@immih.html">
+                <div style="width: 200px; height: 200px; background: linear-gradient(45deg, #D2B48C, #BC9A6A); display: flex; align-items: center; justify-content: center; border-radius: 8px; color: #666; font-weight: normal; text-align: center; border: 1px solid #DDD;">
+                    Immih<br><small>Password Protected</small>
+                </div>
+                <p>Immih</p>
+            </a>
+        </div>
+
+        <!-- CC Link -->
+        <div class="image-link">
+            <a href="./@cc.html">
+                <div style="width: 200px; height: 200px; background: linear-gradient(45deg, #D2B48C, #BC9A6A); display: flex; align-items: center; justify-content: center; border-radius: 8px; color: #666; font-weight: normal; text-align: center; border: 1px solid #DDD;">
+                    CC<br><small>Password Protected</small>
+                </div>
+                <p>CC</p>
+            </a>
+        </div>
+
+        <!-- KGA Link -->
+        <div class="image-link">
+            <a href="./@kga.html">
+                <div style="width: 200px; height: 200px; background: linear-gradient(45deg, #D2B48C, #BC9A6A); display: flex; align-items: center; justify-content: center; border-radius: 8px; color: #666; font-weight: normal; text-align: center; border: 1px solid #DDD;">
+                    KGA<br><small>Password Protected</small>
+                </div>
+                <p>KGA</p>
+            </a>
+        </div>
+
+        <!-- Za Link -->
+        <div class="image-link">
+            <a href="./@za.html">
+                <div style="width: 200px; height: 200px; background: linear-gradient(45deg, #D2B48C, #BC9A6A); display: flex; align-items: center; justify-content: center; border-radius: 8px; color: #666; font-weight: normal; text-align: center; border: 1px solid #DDD;">
+                    Za<br><small>Password Protected</small>
+                </div>
+                <p>Za</p>
+            </a>
+        </div>
+
+        <!-- Instructions Link -->
+        <div class="image-link">
+            <a href="./@instructions.html">
+                <div style="width: 200px; height: 200px; background: linear-gradient(45deg, #D2B48C, #BC9A6A); display: flex; align-items: center; justify-content: center; border-radius: 8px; color: #666; font-weight: normal; text-align: center; border: 1px solid #DDD;">
+                    Instructions<br><small>Password Protected</small>
+                </div>
+                <p>Instructions</p>
+            </a>
+        </div>
+
+        <!-- Other Images Link -->
+        <div class="image-link">
+            <a href="./otherimages.html">
+                <div style="width: 200px; height: 200px; background: linear-gradient(45deg, #F0E68C, #D2B48C); display: flex; align-items: center; justify-content: center; border-radius: 8px; color: #666; font-weight: normal; text-align: center; border: 1px solid #DDD;">
+                    Other Images<br><small>Password Protected</small>
+                </div>
+                <p>Other Images</p>
+            </a>
+        </div>
+
+        <!-- Magdalene Link -->
+        <div class="image-link">
+            <a href="./@mjt.html">
+                <div style="width: 200px; height: 200px; background: linear-gradient(45deg, #D2B48C, #BC9A6A); display: flex; align-items: center; justify-content: center; border-radius: 8px; color: #666; font-weight: normal; text-align: center; border: 1px solid #DDD;">
+                    Magdalene<br><small>Password Protected</small>
+                </div>
+                <p>Magdalene</p>
+            </a>
+        </div>
+    </div>
+    </div>
+
+</div>
+</body>
+
+</html>
+
