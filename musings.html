@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="./static/style.css">
+  <meta charset="utf-8">
+  <title>Musings · Mohsin Malik</title>
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      fetch('./header.html')
+        .then(response => response.text())
+        .then(data => {
+          document.getElementById('header-container').innerHTML = data;
+        });
+    });
+  </script>
+
+</head>
+  
+<body>
+
+
+  <div id="header-container"></div>
+  <!-- Main Content -->
+  <div id="content">
+    <p>Musings</p>
+
+    <!-- List of poems -->
+    <ul class="poems-list">
+      <li class="poem-item">
+        <p>Shotcalled</p>
+        <p class="poem-body">
+          twice God left
+          & once came back
+
+          one summer day wrote me
+          and
+          I learned to count
+        </p>
+        <p class="poem-meta">Written on March 17th, 2026</p>
+      </li>
+      <!-- Add more poem items as needed -->
+    </ul>
+
+  </div>
+</body>
+</html>
